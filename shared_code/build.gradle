@@ -1,25 +1,31 @@
-apply plugin: 'com.android.application'
+
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion compileSdk
 
     defaultConfig {
-        applicationId "com.boozt.submoduletest"
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // staging needs to be added as a buildType for the android modules to recognize its existence.
+    // By default it seems that the other android modules knows release and debug version, so shouldn't be added
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
+        staging
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
