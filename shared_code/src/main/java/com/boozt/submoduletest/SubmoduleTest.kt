@@ -1,3 +1,5 @@
 package com.boozt.submoduletest
 
-data class SubmoduleTest(val test: String)
+data class SubmoduleTest(val test: String) {
+    val test3 = 23
+}
