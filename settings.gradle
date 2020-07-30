@@ -1,2 +1,3 @@
+include ':TestLib'
 include ':shared_code'
 rootProject.name = "SubModuleTest"
