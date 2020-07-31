@@ -1,5 +1,5 @@
 package com.boozt.submoduletest
 
 data class SubmoduleTest(val test: String) {
-    val test3 = 31
+    val test3 = 32
 }
